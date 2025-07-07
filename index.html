@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カラーコード学習アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>カラーコード学習アプリ</h1>
+
+        <div class="game-area">
+            <div id="timer-display" class="timer">残り時間: 30秒</div> <div class="color-display-area">
+                <div id="target-color-box" class="color-box target-color"></div>
+                <div id="player-color-box" class="color-box player-color"></div>
+            </div>
+
+            <div class="controls">
+                <div class="slider-group">
+                    <label for="red-slider">Red:</label>
+                    <input type="range" id="red-slider" min="0" max="255" value="128">
+                    <span id="red-value-dec">128</span> (2進数: <span id="red-value-bin"></span>, 16進数: <span id="red-value-hex"></span>)
+                </div>
+                <div class="slider-group">
+                    <label for="green-slider">Green:</label>
+                    <input type="range" id="green-slider" min="0" max="255" value="128">
+                    <span id="green-value-dec">128</span> (2進数: <span id="green-value-bin"></span>, 16進数: <span id="green-value-hex"></span>)
+                </div>
+                <div class="slider-group">
+                    <label for="blue-slider">Blue:</label>
+                    <input type="range" id="blue-slider" min="0" max="255" value="128">
+                    <span id="blue-value-dec">128</span> (2進数: <span id="blue-value-bin"></span>, 16進数: <span id="blue-value-hex"></span>)
+                </div>
+                <div class="color-code-display">
+                    現在のカラーコード: <span id="current-hex-code">#808080</span>
+                </div>
+                <button id="decide-button">決定</button>
+            </div>
+        </div>
+
+        <div class="result-area hidden">
+            <h2>結果</h2>
+            <div class="result-colors">
+                <div class="result-color-item">
+                    <h3>あなたの色</h3>
+                    <div id="result-player-color" class="color-box"></div>
+                    <p id="result-player-code"></p>
+                </div>
+                <div class="result-color-item">
+                    <h3>正解の色</h3>
+                    <div id="result-target-color" class="color-box"></div>
+                    <p id="result-target-code"></p>
+                </div>
+            </div>
+            <p id="score-display">スコア: --点</p>
+            <button id="next-question-button">次の問題へ</button>
+        </div>
+
+        <div class="score-history-area">
+            <h2>スコア履歴 (最新10回)</h2>
+            <ul id="score-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
